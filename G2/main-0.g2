@@ -1,0 +1,18 @@
+# G2 level of generation.
+
+# Should poing out all files where to seek all external library files
+INCLUDE
+{
+	# Standard headers which probably will be needed for parser.
+	"../include/commonlib.h"
+	# The serch will be done down the tree.
+}
+
+LIBS
+{
+	"../Common/myfile.c"
+}
+
+
+# All files will be browsed to extract function header and to create a list of parameters and their types.
+ 

@@ -1,0 +1,36 @@
+# Not empty Loop
+# Functions definition level G1
+
+FUNC1()
+{
+	#Some logic here, only previously defined function could be used.
+	# if we introduce some lib function they could be called here.
+
+	# In this case we used math functions and parser should find them.
+	# From the beginning it will not work but after I have to add this feature.
+	res = pow(3,2) + log(30)
+	# The mix of C language and other symbols could be used here. 
+	# Parser should convert it in the correct C code.
+}
+
+FUNC1_1()
+{
+
+}
+
+FUNC1_2()
+FUNC2()
+FUNC2_1()
+FUNC3()
+FUNC4()
+FUNC5()
+FUNC6()
+FUNC7()
+FUNC8()
+FUNC9()
+FUNC10()
+F11()
+F12()
+F13()
+F14()
+F15()	

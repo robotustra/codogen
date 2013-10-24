@@ -1,0 +1,13 @@
+# Setup functions.
+# this finctions are executed once before infinite loop starts.
+
+INIT
+{
+# Initialisation symbol for PORT A initialisation. It Could be any name, 
+# but they should be defined after. Every name corresponds to one function, 
+# that can takes parameters  
+	PORTA()
+	PORTB(state1, state2)
+	state3 = PORTC()
+	
+}

@@ -1,0 +1,9 @@
+# Low level functions to manipulate pins.
+
+setPin()
+getPin()
+sendByte()
+recvByte()
+sendLine()
+recvLine()
+readADC()

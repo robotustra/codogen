@@ -1,0 +1,6 @@
+# This level of generator looks for all function names and generates the headers for 
+# each *.c file.
+
+# For empty loop program it does nothing because there is no function determined.
+
+# the output will be the same as input.

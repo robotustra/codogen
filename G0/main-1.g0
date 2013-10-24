@@ -1,0 +1,71 @@
+# Interrupts definition
+
+INTERRUPTS
+{
+
+# Possible values for Atmega128
+#
+# ADC_vect 		ADC Conversion Complete
+ADC_vect : readADC
+# ANALOG_COMP_vect	Analog Comparator
+# EE_READY_vect		EEPROM Ready
+# INT0_vect		External Interrupt 0
+INT0_vect : extInterrupt
+# INT1_vect		External Interrupt Request 1
+# INT2_vect		External Interrupt Request 2
+# INT3_vect		External Interrupt Request 3
+# INT4_vect		External Interrupt Request 4
+# INT5_vect		External Interrupt Request 5
+# INT6_vect		External Interrupt Request 6
+# INT7_vect		External Interrupt Request 7
+# PCINT0_vect		Pin Change Interrupt Request 0     only for Atmega1280 and Atmega1281
+# PCINT1_vect		Pin Change Interrupt Request 1     only for Atmega1280 and Atmega1281
+# PCINT2_vect		Pin Change Interrupt Request 2     only for Atmega1280 and Atmega1281
+# SPI_STC_vect		Serial Transfer Complete
+# SPM_READY_vect	Store Program Memory Read
+# TIMER0_COMPA_vect	TimerCounter0 Compare Match A      only for Atmega1280 and Atmega1281
+# TIMER0_COMPB_vect	Timer Counter 0 Compare Match B    only for ATmega1284P, Atmega1280 and Atmega1281
+# TIMER0_COMP_vect	Timer/Counter0 Compare Match	   only Atmega128
+# TIMER0_OVF_vect	Timer/Counter0 Overflow	
+# TIMER1_CAPT_vect	Timer/Counter Capture Event
+# TIMER1_COMPA_vect	Timer/Counter1 Compare Match A
+# TIMER1_COMPB_vect	Timer/Counter1 Compare Match B
+# TIMER1_COMPC_vect 	Timer/Counter1 Compare Match C
+# TIMER1_OVF_vect	Timer/Counter1 Overflow
+# TIMER2_COMPA_vect	Timer/Counter2 Compare Match A
+# TIMER2_COMPB_vect	Timer/Counter2 Compare Match B
+# TIMER2_COMP_vect	Timer/Counter2 Compare Match       only ATmega128
+# TIMER2_OVF_vect	Timer/Counter2 Overflow
+# TIMER3_CAPT_vect	Timer/Counter3 Capture Event
+# TIMER3_COMPA_vect	Timer/Counter3 Compare Match A
+# TIMER3_COMPB_vect	Timer/Counter3 Compare Match B
+# TIMER3_COMPC_vect	Timer/Counter3 Compare Match C
+# TIMER3_OVF_vect	Timer/Counter3 Overflow            only for Atmega1280 and Atmega1281
+# TIMER4_CAPT_vect	Timer/Counter4 Capture Event       only for Atmega1280 and Atmega1281
+# TIMER4_COMPA_vect	Timer/Counter4 Compare Match A     only for Atmega1280 and Atmega1281
+# TIMER4_COMPB_vect	Timer/Counter4 Compare Match B	   only for Atmega1280 and Atmega1281
+# TIMER4_COMPC_vect	Timer/Counter4 Compare Match C     only for Atmega1280 and Atmega1281
+# TIMER4_OVF_vect	Timer/Counter4 Overflow            only for Atmega1280 and Atmega1281
+# TIMER5_CAPT_vect 	Timer/Counter5 Capture Event       only for Atmega1280 and Atmega1281
+# TIMER5_COMPA_vect	Timer/Counter5 Compare Match A     only for Atmega1280 and Atmega1281
+# TIMER5_COMPB_vect	Timer/Counter5 Compare Match B     only for Atmega1280 and Atmega1281
+# TIMER5_COMPC_vect	Timer/Counter5 Compare Match C     only for Atmega1280 and Atmega1281
+# TIMER5_OVF_vect	Timer/Counter5 Overflow	           only for Atmega1280 and Atmega1281
+# TWI_vect		2-wire Serial Interface
+# USART0_RX_vect	USART0, Rx Complete		   
+# USART0_TX_vect	USART0, Tx Complete
+# USART0_UDRE_vect	USART0 Data Register Empty
+# USART1_RX_vect	USART1, Rx Complete
+# USART1_TX_vect	USART1, Tx Complete
+# USART1_UDRE_vect	USART1, Data Register Empty
+# USART2_RX_vect	USART2, Rx Complete		   only for Atmega1280 and Atmega1281
+# USART2_TX_vect	USART2, Tx Complete                only for Atmega1280 and Atmega1281
+# USART2_UDRE_vect	USART2 Data register Empty         only for Atmega1280 and Atmega1281
+# USART3_RX_vect	USART3, Rx Complete		   only for Atmega1280 and Atmega1281
+# USART3_TX_vect	USART3, Tx Complete                only for Atmega1280 and Atmega1281
+# USART3_UDRE_vect	USART3 Data register Empty         only for Atmega1280 and Atmega1281
+# WDT_vect		Watchdog Timeout Interrupt         only for ATmega1284P, Atmega1280 and Atmega1281
+
+}
+
+

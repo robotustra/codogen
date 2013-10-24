@@ -1,0 +1,21 @@
+# Interrupts definition
+# Gen level 1
+
+readADC
+{
+	# Other symbols could be defined.
+	# For instance if we have any other function inside this one
+	# we have to run Gen level 1 a couple of times to generate header files.
+	# Also other functions from custom library could be used.
+	# Parser should find these functions and include them
+	some_of_my_f1();
+	some_other_f1(param1, param2);
+}
+
+extInterrupt
+{
+	# Do nothing here - empty interrupt
+	# "return;" is inserted by default.
+
+}
+

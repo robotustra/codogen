@@ -1,0 +1,18 @@
+# Second layer libs
+
+#setPin()
+#getBit()
+#sendByte()
+#recvByte()
+#sendLine()
+#recvLine()
+#readADC()
+
+getTemp()
+getCurrnt()     # 
+setAlarm()    
+doMute() 	# Can be ON, OFF
+doRequest()	# send request packet to slave if any
+doReply()       # reply to master
+doSwitch()      # redundancy switch
+getFwdPower()	# 

@@ -1,0 +1,29 @@
+# Create header files.
+
+# Initialisation symbol for PORT A initialisation. It Could be any name, 
+# but they should be defined after. Every name corresponds to one function, 
+# that can takes parameters  
+
+# Some symbols could use other nested functions.
+
+# On this stage function PORTA is already replaced to Init_PORTA, but parser should find it.
+PORTA()
+{
+	F12()
+	if (somestate)
+		F222();
+	# etc..
+}
+
+PORTB(state1, state2)
+{
+	# Some code
+}
+
+PORTC()
+{
+ 	# Some other code
+}
+
+# After all of this H file should be created.
+

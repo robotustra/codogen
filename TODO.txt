@@ -1,0 +1,128 @@
+23.10.2013
+----------
+
+For code generator I would like to use 
+2 initial files,
+
+1st one is describing the connection of controller to the PCB.
+This file will be written once.
+
+The second file will describe the connections of external perifireal to
+main extension board.
+
+
+For the beggining I have to deskribe the highest level.
+
+
+MEB (Main extension board level)
+
+PINS
+{
+	J1
+	{
+		SCL_EXT -- 1    #Clock on I2C bus
+		SDA_EXT -- 5	#I/O, The communication busses should be defined separately
+		MUTE_IN <- 6    
+	}
+	J3
+	{
+		CRT_A <- 2 		#AIN_0
+		MUTE_A_OUT -> 5
+		TEMP_A <-6 		#AIN9
+	}
+	J4
+	{
+		CRT_B <- 2 		#AIN_1
+		MUTE_B_OUT -> 5
+		TEMP_B <-6  	#AIN18
+	}
+	J5
+	{
+		CRT_C <- 2 		#AIN2
+		MUTE_C_OUT -> 5
+		TEMP_C <-6		#AIN11
+	}
+	J6{}
+	J7{}
+	J8{}
+	J9{}
+	J10{}
+	J11{}
+	J12{}
+
+	# Power monitor for FWD Power
+	J13{}
+	
+	# Power monitor for REV Power
+	J14{}
+
+	# Discr
+	J15
+	{
+		AL_NC   -> 1 	# Relay normally closed
+		AL_COMM -> 2 	# Common wire for relay
+		AL_NO   -> 3 	# Relay normally Opened
+		MUTE_IN <- 4
+		MUTE_ST_NC -> 5 	# Mute status, relay normally closed
+		MUTE_ST_NO -> 7		# Mute status, relay normally opened
+		MUTE_ST_COM -> 8 	
+	}
+
+	# Redundancy
+	J16
+	{
+		DEFA <- 2 	# Define whether the unit is A or B, should be LOW
+		DEFB <- 4
+		ALM1_IN <- 5
+		ALM2_IN <- 6
+		ALM_OUT -> 8
+	}
+
+	J17
+	{
+		TX_PLUS -> 1
+		TX_MINUS -> 2
+		RX_PLUS <- 5
+		RX_MINUS <- 6
+	}
+	
+}
+
+COMM
+{
+	I2C:SLAVE
+	{
+		SCL = SCL_EXT
+		SDA = SDA_EXT
+	}
+
+	RS485
+	{
+		TX+ = TX_PLUS
+		TX- = TX_MINUS
+		RX+ = RX_PLUS
+		RX- = RX_MINUS
+	}
+
+}
+
+# Describe the behavior depending on external conditions.
+# Usually it can be some external events like temperature alarms or
+# packet communication.
+
+RULES 
+{
+	# Condition
+	(CRT_A > TTH): ALM_OUT = HIGH  	# Temperature threshold
+	(CRT_A < TTL): ALM_OUT = LOW 	# Temperature dropped below the lower threshold.
+}
+
+# Common flow of actions.
+
+LOOP
+{
+
+	
+}
+
+

@@ -1,0 +1,24 @@
+# -3 level of function
+
+##setPin()
+##getBit()
+##sendByte()
+##recvByte()
+##sendLine()
+##recvLine()
+##readADC()
+
+#getTemp()
+#getCurrnt()     # 
+#setAlarm()    
+#doMute() 	# Can be ON, OFF
+#doRequest()	# send request packet to slave if any
+#doReply()       # reply to master
+#doSwitch()      # redundancy switch
+#getFwdPower()	# 
+
+# These 
+
+updateData()	# 
+checkUnit()	# Do all alarms and redundancy checks and switch or mute if necessary
+doCommand()	# Perform the command of master which is received.

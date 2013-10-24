@@ -1,0 +1,5 @@
+# G3 level of generation.
+
+# Automatic calculation of all variables types and substitute everywhere where it's needed.
+#
+# Find and try to resolve symbols and their types.  
