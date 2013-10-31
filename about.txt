@@ -1,0 +1,115 @@
+31.10.2013
+----------
+
+	Multilayer programming
+
+The idea is to create low level functions which do not take any 
+parameters but use data structure attributed to the layer which displays the state
+of this layer.
+
+The lowest layer has elementary functions, like switch the pin, or move some stuff from one location to another. Copy or clear. 
+
+The second layer function is usually the sequence of such functions, 
+which is simply could be written as a list of them. If we set the state
+of this functions calls before calling the list we don't neet to transfer params to any function.
+
+For example we need to create a pulse on a pin, so we have to write
+
+3 low level finctions like:
+
+L0:
+set_pin
+time_out
+clear_pin
+
+ 
+L1:
+
+pulse_pin
+{
+	clear_pin
+	time_out
+	set_pin
+}
+
+pulse_long_pin
+{
+	clear_pin
+	repeat(times) {time_out}
+	set_pin
+}
+
+pulse_inv_pin
+{
+	set_pin
+	time_out
+	clear_pin
+}
+
+pause_long
+{
+	repeat(times){
+		repeat(times) {time_out}
+	}
+}
+
+pause_short
+{
+	repeat(times) time_out
+}
+
+read_pin
+{
+	in = PORTB.1	
+}
+
+L2:
+
+set_times
+{
+	l1.times = 10
+}
+
+hello_seq
+{
+	pulse_pin
+	pause_long
+	pulse_pin
+	pause_short
+	pulse_long_pin
+}
+
+bye_seq
+{
+	pulse_pin
+	pause_short
+	pulse_long_pin	
+}
+
+# if we want just transfer functionality to new level
+# just repeat the function name all valiables will be transfered automatically.
+
+read_pin
+
+L3:
+
+task
+{
+	set_times
+	hello_seq
+	bye_seq
+}
+
+read_pin
+
+L4:
+
+main
+{
+	if (read_pin)
+	{ 
+		loop{
+			task
+		}
+	}
+}
